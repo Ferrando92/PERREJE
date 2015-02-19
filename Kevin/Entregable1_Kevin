@@ -1,0 +1,30 @@
+public class Entregable1 {
+
+    //Comprueba si un array de enteros tiene algun 0
+    public static boolean tieneCero(int[] a, int ini){
+        if(ini == a.length)
+            return false;
+        else if(a[ini] == 0)
+            return true;
+        else
+            return tieneCero(a, ++ini);
+    }
+    
+    //Metodo lanzadera de tieneCero
+    public static boolean tieneCero(int[] a){
+        return tieneCero(a,0);
+    }
+    
+    //Metodo que realiza el sumatorio de dos arrays de enteros. SUMATORIO a[i] * b[i]
+    public static int sumatorio(int[] a, int[] b, int ini){
+        if(ini >= a.length)
+            return 0;
+        else
+            return (a[ini] * b[ini]) + sumatorio(a, b, ++ini);
+    }
+    
+    //Metodo lanzadera de sumatorio
+    public static int sumatorio(int[] a, int[] b){
+        return sumatorio(a, b, 0);
+    }
+}
