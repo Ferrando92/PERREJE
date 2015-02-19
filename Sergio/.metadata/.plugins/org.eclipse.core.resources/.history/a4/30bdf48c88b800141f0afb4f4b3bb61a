@@ -1,0 +1,23 @@
+
+public class Entregable1 {
+	public static int producto(int[]a, int[]b, int i)
+	{
+		if(a.length!=b.length)
+			return -1;
+		else
+			if(i>=a.length||i>=b.length)
+				return a[i]*b[i];
+			else
+				return a[i]*b[i]+ producto(a,b,++i);
+	}
+	public static void productoVectores(int[]a, int b[])
+	{
+		producto(a,b,0);
+	}
+	public static void main (String[]Kevinskas){
+		int[]a={1,2,3};
+		int[]b={1,2,3};
+		productoVectores(a,b);
+	}
+
+}
