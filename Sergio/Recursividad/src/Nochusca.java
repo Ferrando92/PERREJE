@@ -1,0 +1,44 @@
+public class Nochusca{
+/**
+Implementar un m ́etodo que, dado un array de enteros a, una posici ́on p y un valor v, en caso de
+que v > a[p] sustituya a[p] por v y repita esta operaci ́on de forma recursiva para las posiciones
+p − 1 y p + 1. Estos es, si el array es a = {2, 9, 4, 1, 5, 6, 8, 4}, p = 3 y v = 7, el array deber ́a quedar
+con los valores a = {2, 9, 7, 7, 7, 7, 8, 4}. Si el array es a = {1, 2, 3, 4, 5, 6, 7, 8, 9}, p = 3 y v = 7, el
+array deberá quedar con los valores a = {7, 7, 7, 7, 7, 7, 7, 8, 9}.
+*/
+  public static void ejercicio4(int [] a, int p, int v){
+       if(p>0){
+           if (v>a[p]){
+               a[p]=v;
+               ejercicio4(a, --p,v);
+            } 
+        }
+        else if (p<a.length-1){
+            if (v>=a[p]){
+               a[p]=v;
+               ejercicio4(a, ++p,v);
+            } 
+        }
+}  
+  public static void putada(int [] a,int p, int v)
+  {
+	  if(p<=a.length-1)
+		  if(a[p]<v)
+			  a[p]=v;
+			  if(a[p-1]<v)
+				  putada(a,p-1,v);
+			  if(a[p+1]<v)
+				  putada(a,p+1,v);
+				
+				
+		  
+		  
+  }
+  public static void main(String[]CarlosSucks)
+  {
+	  int [] a = {2, 9, 4, 1, 5, 6, 8, 4};
+	  putada(a,3,7);
+	  for(int i= 0;i<a.length;i++)
+		  System.out.print(a[i]);
+  }
+}
