@@ -35,7 +35,7 @@ public class Usuario {
                     this.numPersonajes--;
                     enc = true;
                     if(i!=this.personajes.length-1)
-                        for(int z=i; z<personajes.length; z++)
+                        for(int z=i; z<personajes.length-1; z++)
                             this.personajes[z] = this.personajes[z+1];
             }
            	i++;
