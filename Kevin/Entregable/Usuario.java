@@ -29,13 +29,13 @@ public class Usuario {
 	public void borrarPersonaje(String nombre){
 		boolean aux = false;
 		for(int i=0; i<personajes.length; i++){
-			if(personajes[i].nombre.equals(nombre)){
-				personajes[i] = null;
-				numPersonajes--;
+			if(this.personajes[i].nombre.equals(nombre)){
+				this.personajes[i] = null;
+				this.numPersonajes--;
 				aux = true;
 			}
-			if(aux)
-				personajes[i] = personajes[i+1];
+			if(aux && i != this.personajes.length-1)
+				this.personajes[i] = this.personajes[i+1];
 		}
 	}
 }
