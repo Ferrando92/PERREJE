@@ -27,11 +27,15 @@ public class Usuario {
 	}
 	
 	public void borrarPersonaje(String nombre){
+		boolean aux = false;
 		for(int i=0; i<personajes.length; i++){
 			if(personajes[i].nombre.equals(nombre)){
 				personajes[i] = null;
-				break;
+				numPersonajes--;
+				aux = true;
 			}
+			if(aux)
+				personajes[i] = personajes[i+1];
 		}
 	}
 }
